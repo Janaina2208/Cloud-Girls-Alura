@@ -1,0 +1,61 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    pincel.fillStyle = 'pink';
+//desenha quadrado
+    pincel.fillRect(0, 0, 50, 50);
+//borda
+    pincel.fillStroke = 'black';
+    pincel.strokeRect(0, 0, 50, 50)
+
+    pincel.fillRect(50, 0, 50, 50);
+    pincel.fillRect(100, 0, 50, 50);
+
+//para repetir o desenho sem repetir todo o código
+/*
+function desenhaQuadrado(x, y, cor){
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    pincel.fillStyle = cor;
+    pincel.fillRect(x, y, 50, 50);
+agora a borda que será mantida
+    pincel.fillStroke = 'black';
+    pincel.strokeRect(x, y, 50, 50);
+}
+
+agora passa os parâmentros qd chamar a função
+desenhaQuadrado(0, 0, 'green');
+desenhaQuadrado(0, 0, 'pink');
+desenhaQuadrado(0, 0, 'blue');
+
+agora sobre LOOP
+Para isso cria while e incrementa
+
+var x = 0;
+
+while(x<600){
+    desenhaQuadrado(x, 0, 'green');
+    x=x+50;
+}
+posso fazer várias repetições
+var x = 0;
+
+while(x<600){
+    desenhaQuadrado(x, 0, 'green');
+    desenhaQuadrado(x, 0, 'red');
+    desenhaQuadrado(x, 0, 'blue');
+    x=x+50;
+}
+
+pode ser feito com FOR também
+É normal existir várias formas de escrever códigos que façam a mesma tarefa, e este é um destes casos. Porém, embora o resultado final seja o mesmo, há uma diferença na sintaxe (ou seja, na forma de escrever) de cada um: enquanto o while precisa receber manualmente em alguma parte do código a linha que altera a condição verdadeira (no caso, x = x + 50;, pela sintaxe do for precisamos passar essa informação nos parênteses iniciais.
+
+for(var x=0; x<600; x=x+50){
+    desenhaQuadrado(x, 0, 'green');
+}
+*/
+</script>

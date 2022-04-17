@@ -1,0 +1,62 @@
+<meta charset="UTF-8">
+<script>
+//é interessante para separar um resultado do outro, a <hr>. cria uma espécie de linha pra separar.
+    function pulaLinha() {
+        document.write("<br><hr><br>");
+    }
+//a tag <big> se tornou obsoleta no html5 mas serve para aumentar o tamanho do texto.
+    function mostra(frase) {
+        document.write("<big>" + frase + "</big>");
+        pulaLinha();
+    }
+
+    var ano = 2022;
+    mostra("Eu nasci em : " + (ano - 36));
+    mostra("Adriano nasceu em : " + (ano - 26));
+    mostra("Paulo nasceu em : " + (ano - 32));
+
+// Lembre-se, o valor de uma variável pode ser retornado por uma função. O problema é que a função por padrão não retorna, então, precisamos explicitar seu retorno através da instrução return. Sendo assim, para que a variável imcCalculado receba o resultado da função calculaImc precisamos adicionar a cláusula return dentro do bloco da função calculaImc. O que estiver à direita da cláusula return será o valor retornado pela função.
+
+//prompt(" ") tipo de popup q retorna um valor
+
+</script>
+
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+        document.write("<br>");
+}
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+}
+
+    function calculaImc(altura, peso) {
+
+        return peso / (altura * altura);
+}
+//A função prompt é a primeira forma que aprendemos para capturar a entrada do usuário.
+var nome = prompt("Por favor, digite seu nome")
+var alturaInformada = prompt("Digite sua altura");
+var pesoInformado = prompt("e seu peso, qual é?");
+
+var imc = calculaImc(alturaInformada, pesoInformado);
+
+document.write(nome + ", seu IMC é " + imc + ".<br>O ideal é estar entre 20 e 25, podendo ser aceitável até 30.<br>Para o limite do imc aceitável vc pode pesar até" + (30* pesoInformado)/imc);
+
+// prompt retorna o que digitamos como string e esse retorno é passado para parseInt. É esta função que recebe uma string e a converte para número
+
+//var convidados = parseInt(prompt("Número de convidados"));
+
+//if - else
+//Math.round(Math.random() * 10) - colocar numeros aleatorios, tipo joguinho do número pensado
+
+
+
+</script>

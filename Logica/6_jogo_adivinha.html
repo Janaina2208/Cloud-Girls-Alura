@@ -1,0 +1,230 @@
+<!-- <meta charset="UTF-8">
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+    }
+
+    var numeroPensado = Math.round(Math.random() * 100);
+
+    var chute = parseInt(prompt("Já pensei. Qual você acha que é?"));
+
+    if(chute == numeroPensado) {
+
+        mostra("Uau! Você acertou, pois eu pensei no " + numeroPensado);
+    } else {
+
+        mostra("Você errou! Eu tinha pensado no " + numeroPensado);
+    }
+</script> -->
+
+<!-- DESAFIOS
+1 - Você pode criar uma função sorteia que recebe um número n e sorteia um número entre 0 a n, retornando esse valor. Dessa forma, em vez de escrever var numeroPensado = Math.round(Math.random() * n);, você escreveria var numeroPensado = sorteia(n);. Faça essa modificação, criando a nova função e utilize-a.
+
+2 - Faça com que seu jogo mostre, quando o usuário errar a tentativa, se o número que ele chutou era maior ou menor ao número pensado pelo programa. -->
+
+<!-- <meta charset="UTF-8">
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+    }
+
+    function sorteia(n) {
+
+        return Math.round(Math.random() * n);
+    }    
+
+    var numeroPensado = sorteia(10);
+
+
+     var chute = parseInt(prompt("Já pensei. Qual você acha que é?"));
+
+    if(chute == numeroPensado) {
+
+        mostra("Uau! Você acertou, pois eu pensei no " + numeroPensado);
+    } else {
+
+        if(chute > numeroPensado) {
+
+            mostra("Você errou! Seu chute é maior que o número pensado!");
+
+        } else {
+
+            mostra("Você errou! Seu chute é menor que o número pensado!");
+        }
+
+    }
+</script> -->
+
+
+<!-- while --- Lembre-se que while repetirá TODAS as instruções que estiverem dentro do seu bloco e a condição passada para ele for true. Veja que while recebe em seus parênteses () a expressão contador <= 10.
+
+Aprendemos que expressões como essa retornam true ou false. Sendo assim, quando no navegador interpretar a linha do while perguntará: o valor da variável contador é menor que ou igual a 10? Como a variável contador recebeu o valor 1 em sua inicialização o resultado da expressão contador <= 10 será true. Sendo assim, o while terá autorização para executar a instrução dentro do seu bloco, no caso, a instrução mostra("Você errou"); e a instrução contador = contador + 1.
+
+Faz sentido ele executar mostra("Já era, você errou!");, claro, mas você lembra a razão de fazermos contador = contador + 1? Veja que essa variável só existe por causa de uma finalidade: é ela que quebrará o lanço de repetição do while. A cada repetição do mostra, precisamos incrementá-la para saber que já mostramos, uma, duas, três vezes e por ai vai. Se não tivermos a instrução contador = contador + 1 nunca a condição passada para o while dará false e cairemos em uma repetição infinita, o famoso loop infinito. -->
+
+<!-- <meta charset="UTF-8">
+<script>
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    var contador = 2;
+    while(contador <= 100) {
+        mostra(contador);
+        contador = contador + 2; // incrementa de dois em dois
+    }
+    mostra("FIM");
+</script> -->
+
+<!-- Que tal uma dificuldade um pouco maior? Imprima todos os números entre 30 e 40 (inclusive 30 e 40), porém os números 33 e 37 não devem ser impressos! No final escreva a palavra "FIM". Use o while para essa tarefa. DICA: o if pode ajudá-lo! -->
+
+<!-- <meta charset="UTF-8">
+<script>
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    var contador = 30;
+
+    while(contador <= 40) {
+
+        if( contador == 33 ) {
+        contador = contador + 1;
+        }
+        else if(contador == 37) {    
+            contador = contador + 1;
+        }
+        else {
+        mostra(contador);
+        contador = contador + 1; 
+        }
+      }
+
+    mostra("FIM");
+
+</script> -->
+
+<!-- Imprima em ordem decrescente todos os números entre 20 e 0, incluindo os limites! No final, escreva a palavra "FIM". DICA: você pode decrementar uma variável! -->
+
+<!-- <meta charset="UTF-8">
+
+<script>
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    var contador = 20;
+
+    while(contador >= 0){
+        mostra(contador);
+        contador = contador - 1;
+    }
+
+    mostra("FIM");
+
+</script> -->
+
+<!-- o usuário tenha 3 tentativas para realizar o login. Atenção: Se ele acerta na primeira tentativa, não faz sentido continuar a perguntar seu login e senha. -->
+
+<meta charset="UTF-8">
+
+<script>
+
+    var loginCadastrado = "alura";
+    var senhaCadastrada = "alura321";
+
+    var maximoTentativas = 3;
+    var tentativaAtual = 1;
+
+    while(tentativaAtual <= maximoTentativas) {
+
+        //a função prompt() retorna o que é digitado como texto e a função parseInt() converte um texto em número
+        var loginInformado = prompt("Informe seu login");
+        var senhaInformada = prompt("Informe sua senha");
+
+        if( loginCadastrado == loginInformado && senhaCadastrada == senhaInformada ) {
+
+            alert("Bem-vindo ao sistema, " + loginInformado);
+
+            tentativaAtual = maximoTentativas; // acertou, então faço o gasto de todas as tentativas para sair do loop. Lá embaixo vai incrementar + 1! 
+
+        } else {
+
+            if (tentativaAtual == 3) {
+                alert("Número permitido de tentativas ultrapassado!");
+            } else {
+                alert("Login inválido. Tente novamente");
+            }
+        }
+
+       // vai para a próxima tentativa. tentativaAtual++
+        tentativaAtual = tentativaAtual +1  
+    }
+
+</script>
+
+<!-- Para saber se um valor é NaN precisamos usar uma função específica, a isNaN. Essa função recebe um parâmetro e retorna true ou false caso o valor seja NaN ou não.
+Outra forma seria fazer isNaN(idade) == true, mas não é necessário testar se true é igual a true, o resultado será true. É por isso que passamos direto para o while isNan(idade) que retorna já verdadeiro ou falso. 
+quando usar while nunca esquecer de incrementar
+
+DIFERENÇA FOR X WHILE
+var multiplicador = 1;
+
+while(multiplicador <= 10) {
+
+    mostra(7 * multiplicador);
+    multiplicador = multiplicador + 1
+}
+
+for(var multiplicador = 1; multiplicador <= 10; multiplicador++) {
+
+    mostra(7 * multiplicador);
+
+}
+break para o código do while
+
+multiplicador = multiplicador + 1 pode escrever multiplicador++
+
+parseInt() para converter um texto em número inteiro. Para que as casas decimais sejam mantidas, usamos o parseFloat()
+
+Isso significa que somos capazes de capturar o que o usuário digitou no input, inclusive, programar uma resposta para quando ele clicar no button.
+
+É através de document.querySelector que podemos ir lá no mundo HTML e trazer o elemento para o mundo JavaScript para que possamos manipulá-lo
+
+-->
+
+<!-- Quando a função exibeTexto for chamada, ela passará como parâmetro da função alert o valor input.value. Não podemos passar simplesmente input, porque o input corresponde a TAG e queremos dessa TAG seu valor (value). Por isso passamos input.value. -->
+
+<!-- faremos com que a caixa de texto ganhe foco sempre que recarregarmos a página, com o input.focus() logo após chamarmos o input para o mundo JavaScript -->
+

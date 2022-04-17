@@ -1,0 +1,79 @@
+<h>A convenção que usaremos para criar nosso programa é adotar letras minúsculas e não usar acentos e, claro, usar a extensão .html.</h>
+<br>
+<h>Outro ponto importante é que toda alteração feita no arquivo .html deve ser salva e, além disso, o navegador precisa recarregar a página para que a última alteração do arquivo entre em vigor.</h>
+
+<!-- O código de Barney, abaixo, possui dois problemas. Primeiro, ele não usou a tag <meta charset="UTF-8"> para que o navegador consiga interpretar corretamente os acentos utilizados. Segundo, ele abriu a tag <h1> mas errou ao fechá-la, repetindo novamente a TAG <h1> quando na verdade teria que ser </h1>. Com isso, o navegador entende que o segundo <h1> é uma nova abertura de TAG e considerará todo o conteúdo que vier depois como seu conteúdo. Isso fará com que o segundo parágrafo também fique em destaque. Cuidado, não esqueça de fechar corretamente TAG's que precisam de fechamento. -->
+<h1>Um pequeno passo para quem já programa, um gigantesco salto para quem esta começando<h1>
+    Este é meu primeiro programa!
+<br>
+
+    <meta charset="UTF-8">
+    Haja coração para dar os primeiros passos na lógica de programação. Precisamos primeiro nos ambientar com o mínimo necessário para que tudo dê certo.
+
+<h1>Sejam bem-vindos</h1>
+<br>
+Seria isso um programa?
+<!-- 
+Todo código escrito em JavaScript deve estar dentro da tag <script>. Vejamos um exemplo que exibe um alerta na tela:
+
+    <meta charset="UTF-8">
+    <h1>Usando JavaScript pela primeira vez</h1>
+    <script>
+        alert("Este é um popup em JavaScript");
+    </script>
+
+Pense que tudo que está entre <script> ... </script> esta no mundo JavaScript. Sendo assim, o navegador interpretará aquele trecho de código como JavaScript. Tudo aquilo que estiver escrito fora de <script> .. </script> é considerado mundo HTML e será interpretado como HTML
+
+Assim como a língua portuguesa que possui regras, toda linguagem de programação também as possui e isso não é diferente com o JavaScript. Se não seguirmos sua sintaxe à risca, nosso código não funcionará.
+
+Aprendemos que a instrução alert é capaz de exibir um popup na tela, inclusive ela é capaz de receber um texto que será exibido no popup. É importante saber que o JavaScript faz distinção entre letras MAIÚSCULAS e minúsculas, portanto se escrever 'Alert' ou 'ALERT' o comando não será reconhecido e o interpretador acusará um erro de sintaxe.
+
+Texto em JavaScript vem entre aspas. Mas por que isso Flávio? Porque os criadores da linguagem JavaScript quiseram assim e definiram em sua sintaxe que tudo que estiver entre aspas é um texto. Aliás, há um termo técnico usado quando falamos de texto, este termo é string.
+********
+Quando usamos a instrução alert() um popup será exibido e nenhum erro acontecerá. Contudo, nenhuma mensagem será exibida no popup. Mas que popup é esse que não exibe nada gente?
+
+Sendo assim, precisamos passar um parâmetro para a instrução. Se quisermos exibir um texto aprendemos que texto em JavaScript vem entre aspas. Daí temos alert("Gostou do meu popup?"). Neste exemplo, dizemos que a instrução alert recebe como parâmetro um texto. Veja que esse parâmetro deve ser passado dentre os parênteses, caso contrário teremos um erro de sintaxe.
+******
+Uso do ponto e vírgula no final de uma instrução JavaScript é opcional e neste treinamento não teremos problemas com sua ausência. Contudo, ao avançar nesta linguagem você verá determinados processamentos de código podem resultar em algo não esperado na ausência do ponto e vírgula. Sendo assim, vamos criar desde já o hábito de terminar uma instrução com o ponto e vírgula.
+
+ESTRUTURA MINIMA
+<meta charset="UTF-8">
+<script>
+
+</script>
+document.write("") escreve no script. as tags html funcionam aqui
+concatenação é soma de texto
+
+Veja que a instrução está toda em letra minúscula e não podemos sair desse padrão, caso contrário nosso programa não funcionará.
+
+Um ponto a destacar é que a passagem do texto que será exibido na tela segue a mesma estrutura de quando usamos a instrução alert. Temos a abertura de um parênteses, o texto e o fechamento do parênteses. É claro que como estamos executando uma instrução, usamos o ponto e vírgula no final para indicar onde ela termina.
+
+**********
+Quando usamos document.write para escrever no mundo HTML, ele não vai pular linha por padrão. Para isso, precisamos escrever no mundo HTML um <br>. Por exemplo:
+
+<meta charset="UTF-8">
+<script>
+    document.write("A média do valor gasto com as viagens é<br>") ;
+    document.write( (200 + 100 + 300 + 400) / 4);
+</script>COPIAR CÓDIGO
+Ou o <br> em outra instrução:
+
+<meta charset="UTF-8">
+<script>
+    document.write("A média do valor gasto com as viagens é") ;
+    document.write("<br>");
+    document.write( (200 + 100 + 300 + 400) / 4);
+</script>COPIAR CÓDIGO
+Mas por que a resposta correta não é "A média do valor gasto com as viagens é 250" ? Veja que para o resultado da soma fique separado do texto, precisamos dar um espaço dentro do texto entre aspas, depois de "é ":
+
+<meta charset="UTF-8">
+<script>
+    document.write("A média do valor gasto com as viagens é ") ;
+    document.write( (200 + 100 + 300 + 400) / 4);
+</script>COPIAR CÓDIGO
+São pequenos detalhes como esse que fazem a diferença!
+*******
+Veja que estamos usando o operador de soma envolvendo dois textos, ou melhor, duas strings. Nesse caso, o JavaScript irá concatenar, ou seja, juntar o texto antes do + com o que vier depois. Por isso o resultado final é "182" que será passado para document.write como parâmetro. É bom lembrar que primeiro o JavaScript avalia a operação antes de passar para o () da instrução.
+***********
+
+-->

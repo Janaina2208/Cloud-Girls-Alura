@@ -1,0 +1,11 @@
+Lógica de programação II: pratique com desenhos, animações e um jogo
+
+tag html q é tela de pintura - canvas
+<canvas width="600" height="400"></canvas>
+
+para chamar no script:
+
+var tela = document.querySelector('canvas');
+var pincel = tela.getContext('2d');
+
+pincel.fillRect
