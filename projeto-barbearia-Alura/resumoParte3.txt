@@ -1,0 +1,106 @@
+Para um bloco onde o conteúdo tenha o mesmo significado, o mesmo sentido, usamos uma <section>.
+Uma <div> é usada no oposto, quando a divisão for só "visual".
+******
+para estilo usa class e para comportamento id
+*****
+Tanto o float:left quanto o float: right servem para que o elemento se destaque na tela, deixe de ocupar o espaço em que estava, para que os outros elementos possam se posicionar ao redor dele
+***
+Nesta aula, aprendemos:
+
+A ajustar a página principal para utilizar os mesmos padrões da página de produtos
+Medidas proporcionais com CSS
+Como funciona a flutuação dos elementos e como modificá-la, com a propriedade float do CSS
+Como limpar o float, com a propriedade clear do CSS
+
+********
+Usar fontes externas é uma alternativa muito funcional para termos mais opções, que deixam o nosso site mais bonito e exclusivo, e também padronizado em todos os navegadores.
+google font
+*******
+
+Nesta aula, aprendemos:
+
+A utilizar fontes externas nas nossas páginas
+Como incorporar um mapa à nossa página
+Como incorporar um vídeo à nossa página
+
+*******
+
+degradê de cinco cores em um elemento - Usamos dentro do mesmo parênteses, separando as cores por vírgulas.
+
+*****
+
+pseudo elementos - elementos que criamos no css, mas na real não existem
+exemplo:
+.titulo-principal::first-letter{
+    font-weight: bold;
+}
+
+do mesmo modo conseguimos inserir :after ou before e inserimos elementos antes e/ou depois de determinado elemento
+
+Quando queremos criar um elemento na página, via CSS, antes do elemento do HTML, usamos a propriedade :before.
+A propriedade :after serve para criar um pseudo-elemento após um elemento do HTML.
+ Com a propriedade :first-letter, eu consigo marcar a primeira letra de qualquer elemento de texto.
+
+*******
+Nesta aula, aprendemos:
+
+A melhorar mais ainda a semântica da página principal, com novas divisões, classes, etc
+Novas pseudo-classes
+Como aplicar um background gradiente na página
+Pseudo-elementos
+
+******
+
+section > p + h2
+O último h2 é filho direto da section e irmão do p.
+Com os seletores avançados do CSS,podemos selecionar os filhos diretos de <main>, para tanto, utilizaremos o sinal >, e todo os outros parágrafos serão ignorados, afinal são filhos diretos da <section> e não de <main>
+
+section ~ h2
+Desta forma, não selecionamos nenhum dos h2. Não existem h2 irmãos diretos da section.
+
+section > h2
+Desta forma, selecionamos todos os filhos diretos da section, selecionando o primeiro e o último item.
+
+***********
+
+Nesta aula, aprendemos:
+
+Seletores avançados CSS
+Seletor >, para acessar os filhos de determinado elemento. Por exemplo, para acessar todos os p dentro de main:
+main > p {
+}
+
+Seletor +, para acessar o primeiro irmão de determinado elemento. Por exemplo, para acessar o primeiro p após um img:
+img + p {
+}
+
+Seletor ~, para acessar todos os irmãos de determinado elemento. Por exemplo, para acessar todos os p após um img:
+img ~ p {
+}
+
+Seletor not, para acessar os elementos, exceto algum. Por exemplo, para acessar todos os p dentro de main, exceto o p que tem id missao:
+main p:not(#missao) {
+}
+
+Como fazer contas com CSS, com a propriedade calc
+
+**********
+
+Todos os elementos e todas as cores podem ter uma camada de opacidade.
+
+Nesta aula, aprendemos:
+
+Como manipular a opacidade dos elementos, com a propriedade CSS opacity
+Como manipular a opacidade das cores
+Como adicionar um sombreamento em volta dos elementos, com a propriedade CSS box-shadow
+Como adicionar um sombreamento em textos, com a propriedade CSS text-shadow
+
+*******
+
+É dentro @dessa media query que criamos um estilo visual que compreenda telas de até 480px.
+
+Nesta aula, aprendemos:
+
+Design responsivo: como ajustar o estilo da nossa página de acordo com o tamanho da tela do dispositivo que a acesse
+Meta tag de Viewport
+Media Queries
