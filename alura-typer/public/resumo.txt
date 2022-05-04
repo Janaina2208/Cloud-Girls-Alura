@@ -364,7 +364,8 @@ Depois de criado um elemento na memória do navegador, podemos adicioná-lo a p�
 
 var itemDaLista = $("<li>");
 $("ul").append(itemDaLista);
-Assim podemos criar novos elementos e adicioná-los ao DOM com o jQuery!
+Assim podemos criar novos elfinalização do cursoementos e adicioná-los ao DOM com o jQuery!
 
 *******
 
+finalização do curso
