@@ -1,0 +1,370 @@
+O jQuery é uma biblioteca JavaScript que abstrai a sua complexidade e problemas de compatibilidade.
+
+A primeira vantagem do jQuery é a compatibilidade que suas funções tem com os navegadores. Quando escrevemos código Javascript , temos de tomar cuidado com as diferentes implementações internas de cada navegador, o que pode fazer com que um código que é completamente funcional em um determinado navegador não seja em outro.
+
+Utilizando jQuery e suas funções, podemos abstrair deste cuidado, já que todas as funções do jQuery são compatíveis com os navegadores mais recentes.
+
+A segunda grande vantagem do jQuery é a produtividade que ele trás para o desenvolvedor. Com suas funções conseguimos escrever um código muito mais sucinto , trazendo maior agilidade no desenvolvimento.
+
+A grande diferença da versão slim do jQuery é que esta não possuí nem as funções de animação nem as de AJAX do jQuery tradicional, deixando a framework mais leve.
+
+Por ela não possuir estes dois módulos do jQuery, ela chega a ser 20% menor do que a versão normal, onerando menos a banda do usuário quando ele acessa um site que utiliza a versão slim.
+
+Ela é útil para desenvolvedores que querem utilizar o jQuery apenas para a manipulação do DOM, escutar eventos, adicionar ou remover classes ou criar elementos, permitindo estes desenvolvedores terem acesso a uma versão mais simples do framework, pois muitas vezes queremos fazer animações utilizando algum recurso do CSS3 ou utilizar alguma outra biblioteca específica para requisições AJAX.
+
+***
+
+A grande diferença está na minificação da versão de produção em relação a versão de desenvolvimento. Minificar é o processo de reduzir o tamanho de um arquivo fazendo certos processos como remover comentários, trocar nome de váriaveis por nomes menores, remover espaços entre outras técnicas.
+
+A versão de produção, por ser minificada, tem um tamanho reduzido, sendo incrívelmente 30% do peso da versão de desenvolvimento. Utilizar a versão de produção quando estamos disponibilizando a versão final do nosso website para o usuário é de extrema importância, pois conseguimos onerar menos a banda de nossos usuários, algo que é bem interessante nos dias de hoje, já com o aumento dos acessos a website via mobile a maioria dos usuários depende de redes 3G e 4G, que são naturalmente mais limitadas.
+
+Mas já ao desenvolver um website, é comum utilizarmos a versão de desenvolvimento, pois podemos ver como uma determinada função do jQuery foi implementada e fica mais fácil debuggar em caso de necessidade.
+
+***
+Para selecionarmos um elemento HTML com jQuery, utilizamos sua função seletora que tem o mesmo nome da framework, a função jQuery! Ela pode ser invocada de dois modos, o primeiro que é utilizando seu nome completo:
+jQuery()
+
+ou a mais comum que é utilizando o atalho conhecido para a função jQuery, o $:
+$();
+
+Como este segundo modo é muito mais fácil de digitar e muito mais utilizado no mercado de desenvolvimento Web, é ele que utilizaremos ao longo deste treinamento.
+
+A função seletora aceita como parâmetro seletores CSS , então como vimos no exercício, ela pode aceitar qualquer tipo de seletor, seja de id(#), classe(.), elemento etc.
+
+Devemos passar o seletor entre aspas, então um exemplo para selecionar o título da página seria:
+var titulo = $("#titulo");
+
+Ela será uma das funções que mais utilizaremos ao longo do treinamento, então vamos ganhar prática com ela!
+
+***
+
+Se queremos ter acesso ao contéudo textual de um elemento selecionado pelo jQuery, devemos utilizar a função .text(), que nos retorna exatamente isto.
+
+Neste exemplo, Ana até selecionou corretamente o elemento, porém pecou tentando imprimir o elemento em si, e não seu texto. A alternativa que exibiria o resultado esperado é :
+
+var nome = $("#nome").text();
+
+***
+
+Quando queremos alterar o texto de um elemento, também utilizamos a função .text(), porém passando o valor do novo texto como parâmetro para ela:
+$("#nome").text("Nico");
+
+Repare que devemos passar uma string, ou seja, entre aspas!
+
+A função .text() tem esta dupla função, nos retornar o valor textual do elemento caso seja chamada sem parâmetro ou alterar o valor de texto do elemento caso seja chamada com uma string como parâmetro.
+
+****
+
+Mas e se precisarmos dar suporte ao IE 8 e versões antigas?
+Se você está desenvolvendo algum tipo de sistema que deve atender o máximo de usuários possíveis, talvez seja bom você utilizar uma versão especial do jQuery: a versão 1.12.
+
+Esta versão específica do jQuery ficou muito famosa, e recebe updates até hoje. Ela é focada para dar suporte aos navegadores antigos, como Internet Explorer 6-8, Opera 12.1x ou Safari 5.1+.
+
+Então caso seu website tenha um público de usuários que notadamente não atualiza seus softwares, como os usuários da China que ainda tem boa parte de seus usuários utilizando o Windows XP, é interessante você utilizar esta versão do jQuery, pois ela é focada em dar suporte maior aos browsers antigos. Talvez algumas das funções que aprendemos aqui neste treinamento não sejam válidas no jQuery 1.12, mas uma rápida consulta à documentação do jQuery resolverá suas dúvidas.
+
+***
+
+https://github.com/alura-cursos/Curso-jQuery-Domine-a-biblioteca-mais-popular-do-mercado/archive/capitulo1.zip
+
+******
+
+A função on() do jQuery, recebe como parâmetro dois argumentos: O primeiro sendo uma string com o nome do evento que ela vai passar a escutar e o segundo uma função, com a ação que ela deve executar quando o evento acontecer.
+
+O nome do evento são os nomes do eventos comuns do Javascript, como de click, input, focus, dblclick entre outros.
+
+A função pode ser tanto uma função anônima:
+
+<input id="botao" type="button">
+<script>
+   $('#botao').on("click",function(){
+        console.log("Fui clicado")!
+    });
+</script>
+Quanto uma função nomeada:
+
+<input id="botao" type="button">
+<script>
+   $('#botao').on("click",exibeMensagem);
+
+   function exibeMensagem(){
+       console.log("Fui clicado")!
+   }
+</script>
+
+*****
+
+Ambas as funções .val() e .text() podem manipular os valores de texto dos elementos, mas a .val() funciona em elementos de <input> que são campos aonde o usuário do site insere dados , como os campos de <input>(todos os tipos), <textarea> e <select>.
+
+Já a função .text() pega o conteúdo de texto de tags HTML que tem texto dentro, como as <h1>, <span> e <p>
+
+Ambas as funções podem atribuir novos valores a determinados elementos, ou apenas pegar os valores deles.
+
+****
+
+O jQuery chama este evento input. No mundo JavaScript puro, sem jQuery, seria o oninput.
+
+Esse evento é disparado quando o campo <input> ou <textarea> recebe uma entrada de texto qualquer.
+
+****
+
+A função .on() recebe dois parâmetros, o nome do evento a escutar e uma função com a ação que deve executar!
+
+********
+
+No link abaixo, você encontra o projeto até o momento atual do curso.
+
+https://github.com/alura-cursos/Curso-jQuery-Domine-a-biblioteca-mais-popular-do-mercado/archive/capitulo2.zip
+
+********
+
+Como vimos no capítulo, para colocar o atributo disabled em um elemento, nós utilizamos a função attr. Mas como ele não recebe nenhum valor, temos que informar isso, "habilitando-o" na função, passando o valor true (verdadeiro) por parâmetro.
+
+Como queremos que o input do nome do pai seja desabilitado caso haja algo digitado no input do nome da mãe, e vice-versa, escutamos o evento input.
+
+*******
+
+Como vimos no capítulo, para colocar o atributo disabled em um elemento, nós utilizamos a função attr. Mas como ele não recebe nenhum valor, temos que informar isso, "habilitando-o" na função, passando o valor true (verdadeiro) por parâmetro.
+
+Como queremos que o input do nome do pai seja desabilitado caso haja algo digitado no input do nome da mãe, e vice-versa, escutamos o evento input. Logo, a opção correta é:
+
+var mae = $("#nome-mae");
+var pai = $("#nome-pai");
+
+mae.on("input", function() {
+    pai.attr("disabled", true);
+});
+
+pai.on("input", function() {
+    mae.attr("disabled", true);
+});
+
+**********
+
+A função .one() funciona de modo semelhante a função .on(), ambas podem ser utilizadas em qualquer elemento, recebem qualquer evento como primeiro parâmetro e uma função anônima ou uma função nomeada como segundo parâmetro.
+
+A diferença entre elas é na hora de escutar os eventos, a função .one() escuta o evento apenas uma única vez, diferentemente da função on(), que como já vimos fica escutando o evento em um elemento do HTML por tempo ilimitado.
+
+********
+A função .text() do jQuery serve para modificar o conteúdo de texto das tags, então se queremos alterar o texto de um <h1>, devemos utilizá-la.
+
+A função .val() é para alterar os valores dos campos de input, então se queremos preencher um <input type="text"> com um valor específico, é ela quem vamos usar.
+
+E por último, a função .attr(), como o próprio nome sugere é para alterar os atributos de elemento, como os atributos rows e col de uma textarea.
+
+Sabemos também que estas funções podem ser utilizadas para pegar, ou modificar valores, dependendo do número de argumentos com quais elas são chamadas.
+
+*******
+
+https://github.com/alura-cursos/Curso-jQuery-Domine-a-biblioteca-mais-popular-do-mercado/archive/capitulo3.zip
+
+******
+
+A função .click() é uma função de atalho para a função .on("click", ...) . Ela tem o mesmo comportamento, apenas sendo um jeito mais curto e rápido de escrever a função.
+
+Os eventos mais comuns do jQuery possuem funções de atalho ( ou shorthand functions, como na documentação) , por exemplo as funções .blur, .focus, .change, .dblclick ...etc. Todos eles equivalem a chamada da função on() passando-os como parâmetro, e existem no jQuery apenas para facilitar a vida do desenvolvedor. As funções de atalho, assim como a função on devem receber uma função como parâmetro, que indica qual ação elas devem executar ao ouvirem o evento.
+
+**********
+
+A função attr pode habilitar, desabilitar ou editar o valor de um atributo, mas precisamos passar um segundo parâmetro.
+
+Se queremos tirar o atributo disabled, podemos passar o segundo atributo como false, ficando:
+
+$(".post").attr("disabled", false);
+
+Assim, a função .attr() vai se comportar como uma outra função do jQuery, a .removeAttr(), que tem como objetivo remover atributos de elementos. Um outro código que também conseguiria remover o attr seria o :
+
+$(".post").removeAttr("disabled");
+
+*********
+
+https://github.com/alura-cursos/Curso-jQuery-Domine-a-biblioteca-mais-popular-do-mercado/archive/capitulo4.zip
+
+*****
+
+Devemos usar a função css() do jQuery que recebe o nome da propriedade:
+
+var cor = $("div").css("background-color");
+Também é possivel recuperar mais de um valor passando um array de propriedades, por exemplo:
+
+var valores = $("div").css(["background-color","width"]);
+O resultado é um objeto que possui todos os valores. Por exemplo para acessar o width podemos escrever:
+
+valores.width
+*******
+
+Colocando as propriedades dentro do código JavaScript estamos violando a separação de responsabilidades. HTML é a estrutura da página, JavaScript a parte dinâmica e o CSS define o estilo. Boa prática então é definir os estilos previamente no CSS e usar apenas as classes no JavaScript.
+
+******
+
+A função correta é toggleClass por exemplo:
+
+var campo = $(".campo-digitacao");
+campo.toggleClass("campo-desativado");
+Essa função toggleClass também pode receber um segundo parâmetro que define se quisermos adicionar ou remover a classe:
+
+campo.toggleClass("campo-desativado", true); //sempre adiciona
+No vídeo você já viu que adicionamos uma borda verde ou vermelha, dependendo se o usuário acertou ou erro:
+
+if(digitado == comparavel) {
+    campo.addClass("borda-verde");
+    campo.removeClass("borda-vermelha");
+} else {
+    campo.addClass("borda-vermelha");
+    campo.removeClass("borda-verde");
+}
+Podemos reescrever esse código sem if, apenas usando o toggleClass. Repare o segundo parâmetro:
+
+var ehCorreto = (digitado == comparavel);
+
+campo.toggleClass("borda-verde", ehCorreto);
+campo.toggleClass("borda-vermelha", !ehCorreto);
+O código fica mais enxuto mas talvez menos legível. De qualquer forma, no curso continuaremos com o if!
+
+********
+
+Novamente o jQuery ajuda muito, podemos selecionar o elemento h1 e aplicar a função css():
+
+$('h1').css('color', 'blue');
+
+*******
+
+https://github.com/alura-cursos/Curso-jQuery-Domine-a-biblioteca-mais-popular-do-mercado/archive/capitulo5.zip
+
+********
+
+Temos que lembrar que dentro de um evento do Javascript e do jQuery, a palavra reservada this sempre se refere ao elemento que sofreu o evento, neste caso ao elemento clicado. Como o elemento clicado é um elemento do HTML, ele se torna um objeto tradicional do Javascript dentro de nosso código. E como já sabemos, a função .text() é exclusiva de objetos jQuery, logo temos de convertê-lo antes.
+
+Para converter um objeto tradicional do Javascript em um objeto jQuery, devemos fazer uso da função jQuery, passando o this para ela, deste modo:
+
+ var texto = $(this).text();
+
+ ********
+
+ A função que adiciona um novo elemento como último filho é a append. Ela recebe um elemento HTML ou uma string e adiciona-o como um filho, depois dos filhos que ele já possuía.
+
+  a função prepend adiciona um novo elemento como primeiro filho, e não como último, desejo de Silvio.
+
+  A função html alteraria o todo o HTML do <tbody>, deixando apenas a nova linha como filha.
+
+  ******
+
+  A função .parent() tem como objetivo navegar pela árvore de elementos do HTML. Ela por padrão retorna o pai do elemento em que foi chamada, logo no caso abaixo:
+
+<div>
+    <h1>Olá</h1>
+</div>
+O pedaço de código $("h1").parent(); nos retorna a div, já que ela é o pai do h1. Podemos encadear várias chamadas a .parent() para buscar elementos mais acima, como no seguinte:
+
+<section>
+    <div>
+        <h1>Olá</h1>
+    </div>
+</section>
+O código $("h1").parent().parent(); nos retornaria a section, que é como se fosse o avô do <h1>.
+
+Como curiosidade , a função .parent() também pode receber um seletor como argumento. Deste modo, ela irá procurar nos pais do elemento por alguém com o seletor especificado, por exemplo:
+
+<sectiEste é um ótimo exercício de revisão de muitas coisas que aprendemos neste módulo.
+
+O primeiro ponto é que queremos partir do elemento , então vamos selecioná-lo com a função jQuery:
+
+$("strong");
+Depois, vamos adicionar um evento de click no mesmo com a função .click:
+
+$("strong").click(function(){
+
+});
+Queremos navegar do elemento clicado até um elemento pai, mas para isto precisamos transformar a tag HTML clicada em um objeto jQuery envolvendo o this:
+
+$("strong").click(function(){
+ $(this)
+});
+Vamos utilizar a função .parent para navegar três níveis acima da árvore, encadeando as chamadas:
+
+$("strong").click(function(){
+ $(this).parent().parent().parent();
+});
+Agora basta alterar a cor de fundo da linha com a função .css():
+
+$("strong").click(function(){
+ $(this).parent().parent().parent().css("background-color","red");
+});
+E nossa cor será alterada com sucesso ao clicarmos no negrito :)on>
+    <div>
+        <h1>Olá</h1>
+    </div>
+    <div class="segunda">
+        <h1>Mundo</h1>
+    </div>
+</section>Este é um ótimo exercício de revisão de muitas coisas que aprendemos neste módulo.
+
+O primeiro ponto é que queremos partir do elemento , então vamos selecioná-lo com a função jQuery:
+
+$("strong");
+Depois, vamos adicionar um evento de click no mesmo com a função .click:
+
+$("strong").click(function(){
+
+});
+Queremos navegar do elemento clicado até um elemento pai, mas para isto precisamos transformar a tag HTML clicada em um objeto jQuery envolvendo o this:
+
+$("strong").click(function(){
+ $(this)
+});
+Vamos utilizar a função .parent para navegar três níveis acima da árvore, encadeando as chamadas:
+
+$("strong").click(function(){
+ $(this).parent().parent().parent();
+});
+Agora basta alterar a cor de fundo da linha com a função .css():
+
+$("strong").click(function(){
+ $(this).parent().parent().parent().css("background-color","red");
+});
+E nossa cor será alterada com sucesso ao clicarmos no negrito :)
+O código $("h1").parent(".segunda"); seleciona todos os h1s da página, e busca em cada um deles por um pai com a classe segunda. Neste caso, retornando apenas a div inferior.
+
+*******
+
+Este é um ótimo exercício de revisão de muitas coisas que aprendemos neste módulo.
+
+O primeiro ponto é que queremos partir do elemento , então vamos selecioná-lo com a função jQuery:
+
+$("strong");
+Depois, vamos adicionar um evento de click no mesmo com a função .click:
+
+$("strong").click(function(){
+
+});
+Queremos navegar do elemento clicado até um elemento pai, mas para isto precisamos transformar a tag HTML clicada em um objeto jQuery envolvendo o this:
+
+$("strong").click(function(){
+ $(this)
+});
+Vamos utilizar a função .parent para navegar três níveis acima da árvore, encadeando as chamadas:
+
+$("strong").click(function(){
+ $(this).parent().parent().parent();
+});
+Agora basta alterar a cor de fundo da linha com a função .css():
+
+$("strong").click(function(){
+ $(this).parent().parent().parent().css("background-color","red");
+});
+E nossa cor será alterada com sucesso ao clicarmos no negrito :)
+
+*******
+
+A função .remove() , serve pare remover um elemento do HTML, como o próprio nome indica. Tome cuidado ao usá-la , pois o elemento é realmente removido e não apenas escondido, que é o caso quando usamos a função .hide().
+
+Para criarmos elementos do DOM com jQuery, devemos utilizar a própria função jQuery ($) , mas em vez de passarmos um id, classe, ou nome de um elemento para ela buscar, devemos passar uma tag HTML completa( com os sinais < e >), deste modo:
+
+var itemDaLista = $("<li>");
+Depois de criado um elemento na memória do navegador, podemos adicioná-lo a página com algumas das várias funções do jQuery, por exemplo com a append():
+
+var itemDaLista = $("<li>");
+$("ul").append(itemDaLista);
+Assim podemos criar novos elementos e adicioná-los ao DOM com o jQuery!
+
+*******
+
