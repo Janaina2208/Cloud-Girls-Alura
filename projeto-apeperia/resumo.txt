@@ -1,0 +1,58 @@
+REM vem de “Root ephemeral” que em uma tradução técnica fica “variável à raiz”, ou seja, é variável em relação à propriedade font-size da tag raiz (HTML). EM vem de “ephemeral” que significa “variável”, e ela é variável à propriedade font-size da tag mãe.
+
+*******
+
+SVG não consegue manter detalhes de uma imagem complexa.
+
+Nessa aula, aprendemos:
+
+Analisar e desmembrar o layout recebido;
+Usar o EMMET para criar blocos de código HTML;
+Usar as unidades relativas REM e EM;
+Tipos de imagens e SVGs;
+
+*******
+
+Na hora de seguir um conceito de desenvolvimento, seja mobile-first ou desktop-first, não existe certo ou errado. Cada um deles tem suas vantagens e desvantagens, e elas devem ser avaliadas de acordo com as necessidades do projeto.
+
+Algumas motivações para usar mobile-first:
+Grande parte dos acessos e vendas vem de dispositivos mobile
+O design é minimalista e simplificado
+Foco em conteúdo
+Algumas motivações para usar desktop-first:
+A interface pode ter diversas features mais ricas
+Maior capacidade de banda e processamento
+O produto é otimizado para desktop (ex: Google Docs)
+Então na hora de desenvolver é importante analisar todos os pontos que vão influenciar no projeto. Clientes, features, custo e linguagem visual, são alguns dos pontos que vão favorecer uma abordagem sobre a outra.
+
+**********
+
+Nessa aula, aprendemos:
+
+O que é e para que serve mobile-first;
+Como funciona o initial-scale dentro do conteúdo do Viewport;
+Como declarar e chamar variáveis CSS;
+
+*******
+
+Nessa aula, aprendemos:
+
+Utilizar as unidades de viewport;
+Identificar a diferença entre unidades absolutas e relativas;
+Analisar as limitações físicas de dispositivos;
+
+******
+
+Nessa aula, aprendemos:
+
+Como lidar com as imagens do layout que recebemos;
+Tags e atributos que têm mais função de semântica do que estilo;
+A importância de escrever um código semântico;
+
+*******
+
+Nessa aula, aprendemos:
+
+Criar estilizações diferentes para diversos dispositivos com media queries;
+Adaptar estrutura e conteúdo para layouts diferentes;
+Progredir de um layout mobile até um layout para desktop;
