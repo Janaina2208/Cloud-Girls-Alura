@@ -1,0 +1,14 @@
+
+public class TestaCondicional2 {
+	public static void main(String[] args) {
+		System.out.println("testando condicionais");
+		int idade = 20;
+		int qtdPessoas = 3;
+		
+		if(idade >= 18 || qtdPessoas >= 2) {
+			System.out.println("seja bem vindo");
+		} else {
+			System.out.println("infelizmente vc n pode entrar");
+		}
+	}
+}
