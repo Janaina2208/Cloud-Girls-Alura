@@ -1,0 +1,72 @@
+os atributos são as características que especificam uma classe.
+
+a criação de uma instância não precisamos preencher os atributos se não quisermos
+
+Pessoa heroi = new Pessoa();
+heroi.nome = "Jonny";
+
+Opção correta! O objeto é criado e sua referência é atribuída à variável heroi, em seguida, atributo nome está definido no lugar correto de forma que a atribuição seja feita com sucesso.
+
+Nessa aula aprendemos sobre atributos e criação de objetos.
+
+Vimos:
+
+O que é uma classe
+Como criar uma classe
+Como criar um objeto ou instância de uma classe
+O que são atributos
+Como definir e visualizar valores de atributos
+Como funciona a atribuição de uma referência à uma variável
+Vamos ver mais sobre as classes na próxima aula! Agora não só suas características mas também seu comportamento. Vamos que só está no começo! Espero você lá!
+
+********
+
+qualquer método no mundo Java precisa definir o retorno. Isso também é quando não queremos retornar nada, pois devemos usar a palavra chave void.
+
+O this é uma referência, ou seja, "aponta" para um objeto.
+
+o this é uma palavra chave igual á void, class, new, int e varias outras. O IDE Eclipse mostra todas as palavras-chave em uma cor diferente, a cor "roxo".
+
+Aprendemos neste capítulo:
+
+Realizar o relacionamento entre classes através de composição;
+Vantagens de se isolar informações repetidas em outra classe;
+Detalhes da composição;
+NullPointerException para atributos não inicializados e seus cuidados.
+
+*******
+não podemos acessar o atributo cpf na classe Banco (o atributo cpf é visível apenas na classe Cliente ).
+***
+
+Setters e Getters devem ser usados com cautela e nem todos os atributos privados precisam ter expostos esses dois métodos com riscos de cairmos em um modelo anêmico que tem os seus comportamentos controlados por outras classes.
+
+******
+
+Aprendemos nesta aula:
+
+Atributos privados, restringindo o acesso aos atributos
+Encapsulamento de código
+Métodos de leitura dos atributos, os getters
+Métodos de modificação dos atributos, os setters
+Getters e Setters de referência
+
+********
+
+a inicialização de atributos é a principal responsabilidade do construtor.
+
+***
+
+No Java é possível fazer a chamada de um construtor dentro de outro e faz-se isso para evitar duplicações de códigos e regras. Afinal uma regra aplicada em um construtor normalmente será a mesma para o outro caso. Para isso usa-se o this( ) passando os parâmetros correspondentes ao construtor que se queira chamar.
+
+*******
+
+Aprendemos nesta aula:
+
+Construtor da classe, possibilitando receber argumentos e inicializar atributos a partir da criação de um objeto
+Com isso, a inicialização dos atributos recebidos no construtor torna-se obrigatória
+Atributos da classe, os atributos estáticos
+Métodos da classe, os métodos estáticos
+Ausência de referência, do this, dentro de métodos estáticos
+
+*******
+
