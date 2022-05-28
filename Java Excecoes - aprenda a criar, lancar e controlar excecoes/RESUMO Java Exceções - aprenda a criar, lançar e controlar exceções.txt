@@ -1,0 +1,173 @@
+MÓDULO: Java Exceções - aprenda a criar, lançar e controlar exceções
+
+Uma pilha Java faz parte da JVM e armazena os métodos que estão sendo executados. Além do bloco de código a pilha guarda os variáveis e as referências desse bloco. Assim a JVM organiza a execução e sabe exatamente qual método está sendo executado que é sempre o método no topo da pilha. A JVM também sabe quais outros precisam ser executados ainda, que são justamente os métodos abaixo.
+
+Nessa aula, aprendemos:
+
+O que é, para que serve e como funciona a pilha de execução.
+O que é depuração (debug) e para que serve.
+Como utilizar o Eclipse e sua perspectiva de debug.
+Como alternar entre perspectivas do Eclipse.
+
+***********
+
+Toda exceção em Java possui um nome que a identifica. Essa abordagem torna seu entendimento mais fácil do que o uso de números mágicos (códigos de erros) como 15, 7012 ou 16.
+
+Exceções sempre possuem um nome.
+
+Sobre os blocos try e catch:
+Para tratarmos uma exceção, que pode ocorrer enquanto nosso programa esta sendo executado, precisamos tratá-la antecipadamente com um bloco de código específico.
+
+A lógica de tratamento de erro no bloco catch só é disparada quando uma exceção é lançada dentro de um bloco try.
+
+O bloco try apenas delimita a área na qual uma exceção pode ser lançada. É através do bloco catch que lidamos com a exceção capturada dentro de um bloco try.
+
+Através de um | (pipe) na cláusula catch, podemos capturar mais de uma exceção. Com isso, podemos ter um único bloco para tratar um ou mais exceções.
+
+Nessa aula, aprendemos:
+
+O que são exceções, para que servem e porquê utilizá-las.
+Como analisar o rastro de exceções, ou stacktrace.
+Tratar exceções com os blocos try-catch.
+Manipular uma exceção lançada dentro do bloco catch.
+Tratar múltiplas exceções com mais de um bloco catch ou usando Multi-Catch utilizando o pipe (|).
+
+**********
+
+Com o bloco try e catch, tratamos uma exceção que pode ocorrer enquanto nosso programa está sendo executado, tratando-a antecipadamente com um código específico.
+
+Caso não seja tratada, a exceção muda o fluxo de execução do programa, encerrando-o abruptamente.
+
+*************
+
+Não basta instanciar a exceção, é necessário lançá-la através do throw.
+ O raise serve para lançar exceções, mas é de outra linguagem, o Python.
+ O método não deve ser passado como parâmetro para a exceção. Não basta instanciar a exceção, é necessário lançá-la. Você sabe como?
+
+O processo de lançar uma exceção basicamente se resume em dois passos: sua instanciação e o seu lançamento, através do throw.
+
+não é necessário guardar a exceção em uma variável, podendo lançá-la diretamente em uma linha só, por exemplo:
+
+throw new ArithmeticException();
+
+Podemos passar uma mensagem para o construtor da exceção, atribuindo assim uma mensagem à mesma.
+
+Quando uma exceção é lançada, mesmo que ainda haja linhas de código a serem executadas, a sua execução é encerrada abruptamente.
+
+Nesta aula, aprendemos:
+
+Como lançar exceções.
+Como atribuir uma mensagem à exceção.
+
+***********
+
+Se você fez o exercício Será que o Miguel entendeu a aula?, vai lembrar o que aprendemos. Para fixar ainda mais, listamos os tópicos dessa aula:
+
+Existe uma hierarquia grande de classes que representam exceções. Por exemplo, ArithmeticException é filha de RuntimeException, que herda de Exception, que por sua vez é filha da classe mais ancestral das exceções, Throwable. Conhecer bem essa hierarquia significa saber utilizar exceções em sua aplicação.
+Throwable é a classe que precisa ser extendida para que seja possível jogar um objeto na pilha (através da palavra reservada throw)
+É na classe Throwable que temos praticamente todo o código relacionado às exceções, inclusive getMessage() e printStackTrace(). Todo o resto da hierarquia apenas possui algumas sobrecargas de construtores para comunicar mensagens específicas
+A hierarquia iniciada com a classe Throwable é dividida em exceções e erros. Exceções são usadas em códigos de aplicação. Erros são usados exclusivamente pela máquina virtual.
+Classes que herdam de Error são usadas para comunicar erros na máquina virtual. Desenvolvedores de aplicação não devem criar erros que herdam de Error.
+StackOverflowError é um erro da máquina virtual para informar que a pilha de execução não tem mais memória.
+Exceções são separadas em duas grandes categorias: aquelas que são obrigatoriamente verificadas pelo compilador e as que não são verificadas.
+As primeiras são denominadas checked e são criadas através do pertencimento a uma hierarquia que não passe por RuntimeException.
+As segundas são as unchecked, e são criadas como descendentes de RuntimeException.
+
+***********
+
+ao tirar extends Exception a classe não é mais uma exceção e consequentemente não podemos usar throws (geramos um outro erro de compilação).
+
+Na classe ConexaoException basta estender a classe RuntimeExeption no lugar deException.
+
+
+Correto. Desse forma a exceção se torna unchecked e o compilador não obriga mais "tomar uma atitude".
+
+ Como a exceção é checked devemos tomar uma "atitude" no método main. Uma forma é colocar throws na assinatura do main:
+
+ public static void main(String[] args)  throws ConexaoException{
+
+Criamos um catch genérico que captura qualquer exceção, incluindo exceções checked.
+
+Isso pode parecer uma boa prática, mas normalmente não é. Como regra geral, sempre tente ser mais especifico possível no bloco catch favorecendo vários blocos catch ou usando multi-catch.
+
+*********
+maneiras que as exceptions podem ajudar a melhorar o código de seu programa:
+
+a - Exceções tem um nome e, caso esse nome seja expressivo, documenta o problema que está ocorrendo.
+
+b - Exceções podem ter uma mensagem, ou seja, o problema e o estado das variáveis podem ser descritos na mensagem.
+
+c - Exceções mudam o fluxo de execução, ou seja, evitam que o problema siga o fluxo "normal" quando algo excepcional acontece.
+
+d - Exceções podem ser tratadas, ou seja, podemos voltar para a execução "normal" caso o "problema" esteja resolvido.
+
+***********
+
+Para saber mais: Nomenclatura
+PRÓXIMA ATIVIDADE
+
+No vídeo, usamos uma exceção com o nome SaldoInsuficienteException. Discutir nomes pode ser algo subjetivo e exige conhecimentos sobre o assunto. Ou seja, é pauta de longas discussões, mas acreditamos que um nome um pouco mais genérico para nossa exceção também seria uma solução adequada.
+
+Por exemplo, a exceção poderia se chamar SacaException ou ContaException. Repare que usamos o nome do método ou da classe. Para detalhar mais o problema (valor do saldo, etc) podemos utilizar a mensagem da exceção, como já fizemos no curso:
+
+throw new SacaException("Valor invalido: Saldo: " + this.saldo + ", Valor: " + valor);COPIAR CÓDIGO
+Dessa forma, caso tenha outro problema, basta alterar a mensagem.
+
+De qualquer forma, saiba que encontrar o nome perfeito para as suas classes e métodos não é uma tarefa fácil e pode tomar o seu tempo. Em alguns casos, já encontramos nomes nas classes que deixaram claro que isso é apenas algo provisório e que deve ser alterado quando houver um consenso no nome.
+
+******
+
+O que aprendemos?
+
+Nessa aula, aprendemos e praticamos:
+
+como criar um bloco catch genérico usando a classe Exception;
+como criar uma exceção nova SaldoInsuficienteException;
+como transformar a exceção em checked ou unchecked.
+
+**********
+
+palavras chaves relacionadas com exceções:
+
+throw - finally - catch - throws - try
+
+quando usamos o try-with-resources automaticamente é criado um bloco finally. Nele é chamado o método close() do recurso.
+
+*********
+
+No vídeo, usamos a exceção IllegalStateException, que faz parte da biblioteca do Java e indica que um objeto possui um estado inválido. Você já deve ter visto outras exceções famosas, como a NullPointerException. Ambos fazem parte das exceções padrões do mundo Java que o desenvolvedor precisa conhecer.
+
+Existe outra exceção padrão importante que poderíamos ter usado no nosso projeto. Para contextualizar, faz sentido criar uma conta com uma agência que possui valor negativo? Por exemplo:
+
+Conta c = new ContaCorrente(-111, 222); //faz sentido? COPIAR CÓDIGO
+Não faz sentido nenhum. Por isso, poderíamos verificar os valores no construtor da classe. Caso o valor esteja errado, lançamos uma exceção. Qual? A IllegalArgumentException, que faz parte das exceções do biblioteca do Java:
+
+public abstract class Conta {
+
+    //atributos omitidos
+
+    public Conta(int agencia, int numero){
+
+        if(agencia < 1) {
+            throw new IllegalArgumentException("Agencia inválida");
+        }
+
+        if(numero < 1) {
+            throw new IllegalArgumentException("Numero da conta inválido");
+        }
+
+        //resto do construtor foi omitido
+    }COPIAR CÓDIGO
+A IllegalArgumentException e IllegalStateException são duas exceções importantes, que o desenvolvedor Java deve usar. Em geral, quando faz sentido, use uma exceção padrão em vez de criar uma própria.
+
+********
+
+Nessa aula, aprendemos:
+
+que existe um bloco finally, útil para o fechamento de recursos (como conexão);
+quando há um bloco finally o bloco catch é opcional;
+que o bloco finally é sempre executado, sem ou com exceção;
+como usar o try-with-resources.
+
+***********
+
