@@ -1,0 +1,140 @@
+MÓDULO - Java Polimorfismo - entenda herança e interfaces
+
+Nessa aula começamos a falar sobre a herança e aprendemos:
+
+quais problemas a herança pode resolver
+como usar herança no Java através de palavra chave extends
+ao herdar, a classe filha ganha todas as características (atributos) e todas as funcionalidades (métodos) da classe mãe
+conhecemos o primeiro benefício da herança: Reutilização do código
+Na próxima aula veremos mais detalhes sobre herança como as palavras chaves super, protected e a sobrescrita de métodos!
+
+******
+
+O que aprendemos?
+
+Nessa aula já entramos mais a fundo na herança. Aprendemos:
+
+que classe mãe é chamada de super ou base class
+que a classe filha também é chamada de sub class
+como aumentar a visibilidade de um membro (atributo, método) através do protected
+como acessar ou chamar um membro (atributo, método) através do super
+como redefinir um método através da sobrescrita
+Na próxima aula veremos um novo benefício da herança, o Polimorfismo. Segura!
+
+*******
+
+Quem define o que podemos chamar é a referência, que é do tipo Funcionario, e a classe Funcionario realmente não tem esse método.
+podemos sempre usar o mesmo tipo na referência e objeto.
+herdamos os atributos (o objeto é criado baseado em todos os atributos da hierarquia).
+herdamos os métodos.
+Lembra-se não tem herança de construtores
+
+******
+
+Referências de tipos de classes mais genéricas referenciam objetos mais específicos.
+
+
+Correto e vimos isso no código, através do exemplo:
+
+Funcionario f = new Gerente();
+
+***********
+
+Nessa aula aprendemos que:
+
+objetos não mudam de tipo;
+a referência pode mudar, e aí entra o polimorfismo;
+o polimorfismo permite usar referências mais genéricas para a comunicação com um objeto;
+o uso de referências mais genéricas permite desacoplar sistemas.
+No próximo vídeo vamos falar sobre como se comportam os construtores na herança.
+
+**********
+Construtor
+assim que criarmos o nosso próprio construtor, o construtor default (sem parâmetros) deixa de existir, No entanto, nada impede adicionar o construtor default explicitamente.
+
+@Override
+É usada para sobrescrever o método da classe mãe, indicando que o método original foi alterado.
+
+********
+
+Nessa aula, vimos:
+
+Conceitos de herança, construtores e polimorfismo
+A utilização da anotação @Override
+Construtores não são herdados
+Um construtor da classe mãe pode ser chamado através do super()
+No próximo video vamos falar como se comportam classes e métodos abstratos! Aguarde :)
+
+**************
+
+Uma classe abstrata representa um conceito, algo abstrato, e o compilador não permite instanciar um objeto dessa classe. Para instanciar é preciso criar primeiro uma classe filha não abstrata.
+Assim que colocamos um método abstrato a classe também deve ser abstrata.
+um método abstrato define apenas a assinatura (visibilidade, retorno, nome do método e parâmetros).
+métodos abstratos jamais podem ter um corpo (implementação).
+Classes e métodos abstratos não tem relação direta com consumo de memória.
+Uma classes abstrata é uma classe normal, só não pode instanciar e pode ter métodos abstratos. O resto continua valendo!
+como podem ter atributos também podem ter métodos concretos!
+uma classe abstrata pode ter métodos sem implementação. Dessa forma obrigamos um filho implementar o método.
+o que é abstrato (a classe) não pode se tornar concreto (objeto). Por isso não podemos instanciar objetos de uma classe abstrata.
+
+******
+
+Nessa aula aprendemos:
+
+O que são classes abstratas
+Para que servem classes abstratas
+O que são métodos abstratos
+Para que servem métodos abstratos
+Na próxima aula veremos sobre o uso de Interfaces!
+
+******
+
+Utilizando interfaces temos uma outra forma de conseguir polimorfismo sem herança.
+Ela é um contrato onde quem assina se responsabiliza por implementar esses métodos (cumprir o contrato)
+Existe apenas herança simples em Java, mas podemos implementar quantas interfaces que quisermos..
+Na verdade nenhuma das duas podem ser implementadas.
+
+Não podemos dar new na classe abstrata, nem na interface!!
+todos os métodos na interface são sempre abstratos e sempre públicos.
+
+Em uma classe abstratos podemos ter métodos concretos e abstratos.
+
+*****
+Sobre o polimorfismo
+podemos comunicar com um objeto através de tipos de variáveis diferentes.
+
+Por exemplo, se existir uma classe Gerente que seja filha de Funcionario, um objeto do tipo Gerente pode ser referenciado com o tipo Funcionario também.
+temos polimorfismo via herança ou interface.4
+vimos que as interfaces são uma alternativa também para ter polimorfismo.
+através super deixamos claro que queremos acessar um membro da classe mãe.
+
+******
+
+Nessa aula aprendemos que:
+
+Não existe herança múltipla em Java.
+Conceitos de interface.
+Diferenças entre classes abstratas e interfaces.
+interfaces são uma alternativa a herança referente ao polimorfismo
+No próximo capítulo praticaremos mais um pouco sobre herança e interfaces!
+
+****
+
+A herança captura o que é comum e isola aquilo que é diferente entre classes.
+Há um acoplamento forte entre mãe e filho, por isso é preciso ter muito cautela na hora de usar a herança.
+lembrar: a "criação de contratos" é feita pelas interfaces.
+
+Garante que todos os métodos de classes que implementam uma interface possam ser chamados com segurança.
+Correto! Isso é a ideia do contrato, garantindo que a classe tenha um comportamento, basta assinar o contrato (implementar a inteface).
+
+Com composições e interfaces teremos mais flexibilidade com nosso código, já que não nos prenderemos ao acoplamento que a herança propõe.
+
+Herança possibilita sim polimorfismo E reutilização.
+
+Com interfaces temos uma alternativa ao polimorfismo, com a composição temos uma alternativa a reutilização de código OU SEJA Normalmente o uso de interfaces (para definir o contrato e ter polimorfismo) e composição (para ter reutilização de código) é mais flexível comparado a herança.
+
+Nessa aula, aprendemos:
+
+Mais a fundo sobre o uso de interfaces
+Trabalhamos mais a fundo com herança
+Vimos outras aplicações de heranças e interfaces
