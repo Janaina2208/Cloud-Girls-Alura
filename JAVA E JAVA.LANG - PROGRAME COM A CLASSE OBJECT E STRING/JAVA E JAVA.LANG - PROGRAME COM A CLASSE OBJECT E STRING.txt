@@ -1,0 +1,218 @@
+ FQN (Full Qualified Name) é nome completo da classe, composto pelo nome do pacote e o nome da classe.
+
+FQN = Nome Pacote . Nome Simples da Classe
+
+******
+Veja as afirmações sobre Packages:
+
+a) Packages são uma forma de distribuir o código Java entre projetos.
+
+b) Packages são diretórios com significado especial dentro do código fonte Java
+
+c) A palavra chave package deve ser a primeira declaração no código fonte Java.
+
+d) Packages servem para organização e agrupar as classes e interfaces.
+
+Quais afirmações são verdadeiras?
+
+packages são diretórios que tem significado especial dentro do código fonte Java (b), a palavra chave package deve ser a primeira declaração (c) e packages servem para organização e agrupar as classes e interfaces (d).
+
+Apenas a afirmação (a) é errada.
+
+*************
+
+nomenclatura do package
+
+sempre seguindo a regra:
+
+NOME_DO_SITE_AO_CONTRARIO.NOME_DO_PROJETO
+
+********
+
+Vimos agora que em um arquivo de classe ou interface existe a declaração do package, a declaração do import e a definição da classe.
+
+a) Só pode ter uma declaração package por arquivo
+
+b) A declaração do import é opcional
+
+c) É possível repetir a declaração import para importações de packages diferentes
+
+d) A definição da classe sempre deve vir por último (após package e import)
+
+**************
+
+Por organização e pela convenção adotada, precisamos seguir o domínio da empresa. Ou seja, se a empresa tem como domínio alura.com.br, os pacotes devem ser subpacotes de br.com.alura.
+
+Quando um projeto utiliza pacotes, podemos usar o import de outras classes para sua utilização.
+Correto! O import facilita o uso da classe pois não precisamos do Full Qualified Name.
+
+O modificador default do Java restringe acesso a nível de pacote. Logo, se não for definido algum modificador, seja na classe, método, ou atributo, apenas classes do mesmo pacote podem acessar essas informações.
+Correto, com default apenas classes do mesmo pacote podem acessar essas informações.
+
+***
+
+O que aprendemos?
+
+packages servem para organizar o nosso código
+packages fazem parte do FQN (Full Qualified Name) da classe
+o nome completo da classe (FQN) é composto de: PACKAGE.NOME_SIMPLES_CLASSE
+a definição do package deve ser a primeira declaração no código fonte
+para facilitar o uso de classes de outros packages podemos importá-los
+os imports ficam logo após da declaração do package
+a nomenclatura padrão é usar o nome do domínio na web ao contrário junto com o nome do projeto, por exemplo:
+br.com.caelum.geradornotas
+br.com.alura.gnarus
+br.gov.rj.notas
+de.adidas.lagerCOPIAR CÓDIGO
+Uma vez organizado as nossas classes podemos revisar o modificadores de visibilidades que dependem dos pacotes. 
+
+*******
+
+Temos quatro modificadores: private, protected, default e public. Onde a ordem do MAIS restritivo para o MENOS restritivo é: private, default, protected e public.
+
+O modificador protected funciona igual ao *<<package private>> mas adiciona a visibilidade para os filhos (chamado de "publico para os filhos").
+
+A ausência do modificador, também chamado de package private ou default, o membro fica visível na classe e no package, mas é invisível fora do pacote (nem para filhos).
+
+
+*****
+
+Nessa aula falamos novamente sobre visibilidade e aprendemos:
+
+existem 3 palavras chaves relacionado com a visibilidade: private, protected, public
+existem 4 níveis de visibilidade (de menor para maior):
+private (visível apenas na classe)
+<<package private>> (visível na classe E em qualquer outro membro do mesmo pacote, podendo ser chamado de default)
+protected (visível na classe E em qualquer outro membro do mesmo pacote E para qualquer filho)
+public (visível em qualquer pacote)
+os modificadores podem ser usados na definição da classe, atributo, construtor e método
+
+*******
+Qual comentário devemos usar para declarar um javadoc no código fonte?
+
+/**
+* javadoc aqui
+*/
+
+Correto, importante é usar o char / seguidos por 2 chars **
+
+apenas os membros "públicos" são contemplados no javadoc. Outros membros (não públicos) são considerados detalhes da implementação e não podem ser utilizados por outras classes.
+
+********
+
+Segue a lista completa:
+
+@author (usado na classe ou interface)
+@version (usado na classe ou interface)
+@param (usado no método e construtor)
+@return (usado apenas no método)
+@exception ou @throws (no método ou construtor)
+@see
+@since
+@serial
+@deprecated
+Importante é que as tags do javadoc existem apenas para padronizar alguns dados fundamentais do seu código fonte como o autor e a versão.
+
+Outras anotações
+os cursos você também já viu uma anotação fora do javadoc, a anotação @Override. Essa anotação é considerada uma configuração, nesse caso interpretado pelo compilador.
+
+As anotações vão muito além das tags javadoc e são muito mais sofisticadas e poderosas. Elas só entraram na plataforma Java a partir da versão 1.5 enquanto o javadoc está presente desde o nascimento da plataforma Java. O interessante é que as anotações foram inspirados pelas tags do javadoc.
+
+Se você ainda não está seguro sobre o uso das anotações, fique tranquilo pois você verá ainda muitas usadas pelas bibliotecas por ai para definir dados e configurações. Aguarde!
+
+**********
+
+É o formato padrão do mundo Java para distribuir código compilado.
+
+
+Correto, qualquer biblioteca ou projeto vai usar JAR(s) para distribuir o código.
+
+É um arquivo compactado como ZIP.
+
+
+Correto, é nada mais do que um arquivo ZIP, mas como a extensão .jar
+
+******
+
+Nessa aula mais leve vimos e aprendemos:
+
+quais comentários e tags (anotações) a usar para definir o javadoc
+como gerar o javadoc no Eclipse
+que javadoc é uma documentação para desenvolvedores
+que as classes Java padrão também usam javadoc
+como criar nossa própria biblioteca através do JAR (J*ava *ARchive)
+como importar a biblioteca no novo projeto
+como criar um JAR executável
+Na próxima aula vamos conhecer o pacote java.lang.
+
+********
+
+sobre o pacote java.lang
+
+as classes String e System são apenas dois exemplos de vários outros.
+não é preciso colocar explicitamente o import java.lang.*
+As classes String e System vem desse pacote.
+
+**********
+
+exceções
+Quando falamos sobre exceções já vimos várias classes como Exception, RuntimeException, NullPointerException ou ArithmeticException.
+
+Todas essas classes vem do pacote java.lang e por isso não era preciso importá-las.
+
+*********
+
+Uma das classes que frequentemente lidamos é a String. 
+objetos da classe String são imutáveis. Isso significa que, uma vez criado, não pode ser alterado, por isso qualquer alteração cria um novo objeto String.
+
+É uma classe definida em java.lang e por isso não há a necessidade de importar.
+Correto, pois a classe String realmente é do pacote java.lang. O FQN é java.lang.String
+
+****
+
+o método replace não altera a String original e sim devolve uma nova String. Para contemplar a alteração devemos pegar o resultado do método replace:
+
+String nome = "Mario";
+nome = nome.replace('o', 'a');
+System.out.println(nome);
+
+*****
+O que aprendemos?
+
+Nessa aula aprendemos e conhecemos:
+
+o package java.lang é o único pacote que não precisa ser importado
+nele tem classes fundamentais que qualquer aplicação precisa, como a classe String e System
+objetos da classe String são imutáveis e usamos uma sintaxe literal para criar (object literal)
+qualquer método de alteração da classe String devolve uma nova String que representa a alteração
+a classe String é uma CharSequence
+se precisamos concatenar muitos String devemos usar a classe StringBuilder
+vimos vários métodos da classe String como trim, charAt, contains, isEmpty, length, indexOf, replace
+Na próxima aula veremos outra classe fundamental: java.lang.Object
+
+********
+
+Qualquer objeto pode ser referenciado pelo tipo Object, já que ela é a principal.
+
+
+Correto, o tipo Object é a forma mais genérica de referenciar um objeto.
+
+Não é preciso deixar explícito na declaração de uma classe que ela deve herdar de Object, porque isso é automático.
+
+
+Correto, não é preciso herda do Object explicitamente, o compilador automaticamente insere a declaração.
+
+*****
+
+O método toString() existe para devolver uma informação sobre o estado do objeto.
+
+
+Correto, o método toString deve devolver informações sobre o estado do objeto. É útil para a depuração no desenvolvimento.
+
+O método toString() existe para ser sobrescrito.
+
+
+Correto, é boa prática sobrescrever o método para dar um significado maior do que a saída padrão desse método.
+
+*****
+
