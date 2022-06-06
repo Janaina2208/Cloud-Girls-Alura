@@ -1,0 +1,238 @@
+Nessa aula sobre Arrays aprendemos:
+
+Um array é uma estrutura de dados e serve para guardar elementos (valores primitivos ou referências)
+Arrays usam colchetes ([]) sintaticamente
+Arrays têm um tamanho fixo!
+Um array também é um objeto!
+Arrays são zero-based (o primeiro elemento se encontra na posição 0)
+Um array é sempre inicializado com os valores padrões.
+Ao acessar uma posição inválida recebemos a exceção ArrayIndexOutOfBoundException
+Arrays possuem um atributo length para saber o tamanho
+A forma literal de criar uma Array, com o uso de chaves {}.
+No próximo capítulo falaremos mais um pouco sobre arrays (do tipo Object) e veremos como funciona esse parâmetro do método main.
+
+*********
+
+Nessa aula aprendemos:
+
+uma array do tipo Object pode guardar qualquer tipo de referência
+quando convertemos uma referência genérica para uma referência mais específica é preciso usar um type cast
+o cast só compila quando é possível, mesmo assim pode falhar na hora de rodar
+quando o type cast falha podemos receber uma ClassCastException
+para receber valores ao chamar o programa Java na linha de comando podemos usar o array String[] no método main
+Na próxima aula começaremos a falar sobre listas! Aguarde :)
+
+****************
+
+O que aprendemos?
+
+Nessa aula começamos a falar sobre lista e conhecemos a classe java.util.ArrayList. Aprendemos:
+
+que a classe java.util.ArrayList encapsula o uso do array e oferece vários métodos de mais alto nível
+que uma lista guarda referencias
+como usar métodos size, get, remove
+como usar o foreach para iterar a ArrayList
+que os generics parametrizam classes
+que no caso da ArrayList podemos definir o tipo dos elementos através de generics
+Isso é apenas o início sobre esse poderoso pacote java.util. Na próxima aula vamos mergulhar mais!
+
+*********
+
+as listas sempre possuem um índice (podemos acessar o elemento através da posição).
+
+Além disso, existe mais uma característica: lista aceitam elementos duplicados, mas sobre isso falaremos um pouco mais na frente.
+
+garantem a ordem de inserção. Isso significa que ao iterar recebemos os elementos na mesma ordem que eles foram inseridos.
+
+**********
+
+O que aprendemos?
+
+Nessa aula aprendemos:
+
+como implementar o método equals para definir a igualdade
+que o método equals é utilizado pelas listas
+que existe mais uma lista, a java.util.LinkedList
+a diferença entre ArrayList e LinkedList
+a interface java.util.List que define os métodos da lista
+No próximo capítulo veremos mais uma implementação da interface List
+
+***********
+
+O Vector não é um ArrayList. É verdade que ambas as classes usam um array como implementação mas elas não tem um relacionamento na hierarquia de classes.
+
+******
+
+Nessa aula vimos:
+
+o java.util.Vector, que é uma ArrayList thread safe
+a interface java.util.Collection que é a interface de todas as coleções
+as listas são sequencias que aceitam elementos duplicados
+os conjuntos (java.util.Set) também são coleções, mas não aceitam duplicados nem são listas
+Na próxima aula vamos resolver o problema de guardar primitivos nas listas!
+
+**********
+
+O que aprendemos?
+
+Nessa aula focamos nas classes WRAPPERS e aprendemos que
+
+para cada primitivo existe uma classe chamada Wrapper
+para guardar um primitivo numa coleção é preciso criar um objeto que embrulha o valor
+a criação do objeto Wrapper é chamada de autoboxing
+a retirada do valor primitivo do objeto Wrapper é chamada de unboxing
+autoboxing e unboxing acontecem automaticamente.
+as classes wrapper possuem vários métodos auxiliares, por exemplo para o parsing
+todas as classes wrappers que representam um valor numérico possuem a classe java.lang.Number como mãe
+Na próxima aula vamos aprender como ordenar as listas!
+
+***********
+
+A interface Comparable exige uma implementação do método compareTo, que precisa ser chamado pelo algoritmo interno do método sort() da lista.
+
+***********
+
+Questionário
+
+Vou te passar um desafio e fazer algumas perguntas relacionadas com listas. Para responder, investigue a documentação oficial da classe Collections dentro do pacote java.util:
+
+Como podemos inverter a ordem de uma lista?
+- Para inverter a ordem de lista você pode usar o método reverse da classe Collections:
+
+Collections.reverse(lista);
+
+Como podemos embaralhar todos os elementos de uma lista?
+Como podemos rotacionar os elementos de uma lista?
+- Para embaralhar existe o método shuffle e para rotacionar tem o método rotate:
+
+Collections.shuffle(lista);
+Collections.rotate(lista, 5); //rotacionar 5 posicoes
+
+Ordenar arrays também não é difícil basta usar o método sort da classe Arrays. A classe Arrays é parecida com Collections no sentido que também junta vários métodos utilitários
+
+************
+
+Nessa aula fundamental e importante aprendemos que:
+
+para ordenar uma lista é preciso definir um critério de ordenação
+há duas formas de definir esse critério
+pela interface Comparator
+pela interface Comparable (ordem natural)
+o algoritmo de ordenação já foi implementado
+na lista no método sort
+na classe Collections pelo método sort
+a classe Collections é uma fachada com vários métodos auxiliares para trabalhar com as coleções, principalmente listas
+Respira fundo, pois estamos quase no fim desse curso, no entanto falta ainda aprender (finalmente!) as famosas lambda expressions. Tá pronto para continuar?
+
+**************
+
+Lambda
+nomes.forEach((nome) -> System.out.println(nome));
+
+Corretíssima! A linguagem evoluiu muito como esse exercício mostra. Nas primeiras versões realmente era burocrático iterar as listas. Com as lambdas, o laço (for) se tornou uma simples chamada de um método. Muito legal!
+
+*******
+
+Você já sabe agora que existem muitas coleções. Só nesse treinamento vimos ArrayList, LinkedList e Vector. Se você assistir ainda o curso dedicado as coleções você aprenderá as interfaces para fila (Queue), conjunto (Set) e mapa (Map) cada uma com várias implementações.
+
+Aí vem uma pergunta: Como posso acessar (iterar) todas essas implementações de maneira uniforme sem saber os detalhes de cada implementação? A resposta está na "caixa de padrões de projeto" e se chama Iterator.
+
+Uma Iterator é um objeto que possui no mínimo dois métodos: hasNext()e next(). Ou seja, você pode usá-lo para perguntar se existe um próximo elemento e pedir o próximo elemento. A notícia boa é que isso funciona com TODAS as implementações e aí a grande vantagem.
+
+*******
+
+RESUMO FINAL - Tudo de mais importante que foi dado
+
+Chegamos ao último vídeo do curso, concluindo uma longa trilha que iniciou desde os conceitos mais básicos do Java.
+
+Iniciamos pelos arrays, a primeira estrutura de dados que vimos. Com ela, aprendemos a armazenar diversos valores de uma só vez, vimos o que é um array de primitivos, com uma sintaxe incomum, que utiliza colchetes ([]).
+
+Inicializamos o array, indicando a posição desejada, lembrando que ela sempre inicia do 0, e aprendemos a acessar determinada posição, bem como a descobrir quantos elementos aquela lista é capaz de armazenar.
+
+Assim como existem primitivos, aprendemos que podem existir arrays de referências. Ao criar o objeto, o que é armazenado é a indicação à ele, e não ele em si. De resto, o funcionamento é igual ao tipo de array visto anteriormente.
+
+Um ponto negativo deste tipo de lista é seu número fixo de elementos, uma vez criada, ela terá aquele tamanho, sem possibilidade de alteração ou flexibilização. Além disso, apesar de ser possível sabermos esta capacidade de armazenamento, não há um método que nos permita descobrir o número de elementos armazenados.
+
+Por este motivo, vimos que foi criado um tipo de armazenador de objetos de referência, que é o ArrayList. Trata-se de uma classe que, internamente, utiliza um array. Sua sintaxe é, portanto, a mesma de uma classe qualquer.
+
+Além disso, vimos que é possível criar parâmetros nela, para indicarmos que só será possível armazenar um tipo de referência, por exemplo, do tipo Conta, como é o caso abaixo:
+
+ArrayList<Conta> lista = new ArrayList<Conta>();
+
+Conta cc1 = new ContaCorrente(22, 11);
+lista.add(cc1);
+
+Conta cc2 = new ContaPoupanca(22, 22);
+lista.add(cc2);
+
+System.out.println("Tamanho: " + lista.size());COPIAR CÓDIGO
+Ela possui diversos métodos específicos que facilitam o trabalho com estrutura de dados, é o caso do size(), que nos permite descobrir o número de referências armazenadas.
+
+Há ainda outros tipos de estruturas de dados, como vimos, temos: LinkedList e o Vector.
+
+O LinkedList é uma lista duplamente encadeada, enquanto o Vector é similar ao ArrayList, mas é capaz de trabalhar com diversos threads. Como são todas listas, implementam a interface List. Lembrando que todas as listas são sequências, e armazenam os elementos com base em um índice, isso não impede que adicionemos duplicados, ou seja, que itens sejam repetidos.
+
+A ideia de armazenar dados é presente no mundo Java também na Collection, uma interface ainda mais genérica que List, e nos conjuntos Set e HashSet, que por sua vez não aceitam itens duplicados.
+
+Como não é possível guardarmos valores primitivos em um array, existe para cada um deles uma classe wrapper correspondente.
+
+Esta transformação, do primitivo para o objeto, e vice-versa, é chamada de autoboxing e unboxing, e é feita automaticamente pelo Java.
+
+Vimos uma variação dos generics, onde omitimos o tipo, e o código continua funcionando:
+
+List<Integer> lista = new ArrayList<>();
+
+lista.add(5);
+lista.add(12);
+
+System.out.println("Tamanho: " + lista.size());COPIAR CÓDIGO
+Aprendemos ainda formas de ordenar nossos métodos. Temos o sort(), bem como a classe Collections, que possui uma série de métodos auxiliares estáticos.
+
+O sort() recebe um critério de comparação, que é definido por meio de uma interface com um único método.
+
+Estas classes sem atributos, que possuem uma única funcionalidade, foram trabalhadas quando tratamos das classes anônimas e lambdas.
+
+Como vimos, é menos custoso criar uma classe, a partir da interface, e já criar o objeto, de forma direta, em unidade. Isso significa que, em vez de fazermos isso, que é um processo burocrático:
+
+lista.sort( new Comparator<Conta>() {
+
+        public int compare(Conta c1, Conta c2) {
+
+                return Integer.compare(c1.getNumero(), c2.getNumero());
+
+        }
+
+});COPIAR CÓDIGO
+É melhor escrevermos da seguinte forma:
+
+lista.sort( (c1, c2) -> Integer.compare(c1.getNumero(), c2.getNumero()) );COPIAR CÓDIGO
+Neste segundo caso, estamos utilizando os lambdas, que facilitam ainda mais o trabalho com funções, no caso (c1, c2), e em seguida, o código com o resultado desejado, ou seja, o nosso método compare.
+
+Gostaria de convidar você para o próximo curso, Java Parte 7, no qual falaremos sobre java.io. Aprenderemos a trabalhar com leitura de arquivos, escrita, fluxo de dados oriundos da rede, ou ainda do teclado, onde podemos envia-los, entre outros.
+
+É um tópico importante, principalmente para aquele que têm interesse em trabalhar com a web, já que se lida bastante com a relação de input e output.
+
+Se quiser entender este código abaixo, convido você, e agradeço por ter assistido a este curso, até a próxima!
+
+class TestaEntrada {
+
+        public static void main(String[] args) throws IOException {
+
+                BufferedReader br =
+
+                        new BufferedReader(
+
+                                new InputStreamReader(
+
+                                        new FileInputStream("arquivo.txt")));
+                while (s != null) {
+
+                        System.out.println(s);
+
+                        s = br.readLine();
+
+                }
+
+                br.close;
+        }
+}
